@@ -12,8 +12,8 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
   <!-- build:css(.tmp) styles/main.css -->
-  <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
 
   <title ng-bind="$state.current.title + '- PEM心理自助平台'"></title>
@@ -28,6 +28,11 @@
       <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
 
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+      <script src="bower_components/respond/respond.min.js"></script>
+    <![endif]-->
     <!-- Add your site or application content here -->
     <div id="nav">
       <div class="container">
@@ -67,20 +72,22 @@
       </div>
     </div>
 
-    <div class="container" ui-view >
+    <div class="container"  >
+      <div class="jumbotron" ng-class="ss" ui-view> 
+      </div>
+      <hr>
     </div>
-    <div class="container" ng-hide = "true">
+    <div id="footer">
+      <p>© zskx 2013</p>
+    </div>
+    <!-- <div class="container" ng-hide = "true">
       <pre>
-        <!-- Here's some values to keep an eye on in the sample in order to understand $state and $stateParams -->
         $state = {{$state}}
         $stateParams = {{$stateParams}}
         $state full url = {{ $state.$current.url.source }}
-        <!-- $state.$current is not a public api, we are using it to
-             display the full url for learning purposes-->
       </pre>
 
-    </div>
-
+    </div>-->
 
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID

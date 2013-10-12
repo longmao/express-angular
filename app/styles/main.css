@@ -33,8 +33,22 @@ body {
     }
 }
 .container .jumbotron{
+    min-height: 400px;
     line-height: 1.4;
 }
 .jumbotron a{
     font-size: 13px;
+}
+#footer{
+    text-align: center;
+}
+.jumbotron p{
+    font-size: 13px;
+}
+h3, .h3{
+    font-size: 14px;
+    font-weight: bold;   
+}
+.loading{
+    
 }

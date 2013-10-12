@@ -1,9 +1,8 @@
 <p>This is the jiating view.</p>
-<div class="jumbotron">
-  <ul>
-    <li ng-repeat="list in lists" >
-      <a href="#/item/{{list.id}}">{{list.text}}</a>
-    </li>
-  </ul>
-</div>
+
+<ul>
+  <li ng-repeat="list in lists">
+    <a href="#/item/{{list.id}}">{{list.text}}</a>
+  </li>
+</ul>
 <div ui-view></div>

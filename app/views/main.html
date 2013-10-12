@@ -1,7 +1,44 @@
-<div class="jumbotron">
-  <ul>
-    <li ng-repeat="list in lists" >
-      <a href="#/item/{{list.id}}">{{list.text}}</a>
-    </li>
-  </ul>
+<div class="row">
+  <div class="col-6 col-sm-6 col-lg-4">
+    <h3>婚姻家庭</h3>
+    <ul>
+      <li ng-repeat="list in lists">
+        <a href="#/item/{{list.id}}">{{list.text}}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="col-6 col-sm-6 col-lg-4">
+    <h3>恋爱交友</h3>
+    <ul>
+      <li ng-repeat="list in lists">
+        <a href="#/item/{{list.id}}">{{list.text}}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="col-6 col-sm-6 col-lg-4">
+    <h3>青少年教育</h3>
+    <ul>
+      <li ng-repeat="list in lists">
+        <a href="#/item/{{list.id}}">{{list.text}}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="col-6 col-sm-6 col-lg-4">
+    <h3>职场问题</h3>
+    <ul>
+      <li ng-repeat="list in lists">
+        <a href="#/item/{{list.id}}">{{list.text}}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="col-6 col-sm-6 col-lg-4">
+    <h3>人际交往</h3>
+    <ul>
+      <li ng-repeat="list in lists">
+        <a href="#/item/{{list.id}}">{{list.text}}</a>
+      </li>
+    </ul>
+  </div>
 </div>
+
+<div ui-view></div>
