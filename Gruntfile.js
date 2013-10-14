@@ -42,6 +42,10 @@ module.exports = function (grunt) {
         files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
         tasks: ['copy:styles', 'autoprefixer']
       },
+      recess: {
+	    files: ['<%= yeoman.app %>/styles/{,*/}*.less'],
+	    tasks: ['recess:dist']
+      },
       livereload: {
         options: {
           livereload: LIVERELOAD_PORT
@@ -158,7 +162,7 @@ module.exports = function (grunt) {
     },
     coffee: {
       options: {
-        sourceMap: true,
+        sourceMap: false,
         sourceRoot: ''
       },
       dist: {
@@ -166,7 +170,7 @@ module.exports = function (grunt) {
           expand: true,
           cwd: '<%= yeoman.app %>/scripts',
           src: '{,*/}*.coffee',
-          dest: '.tmp/scripts',
+          dest: '<%= yeoman.app %>/scripts',
           ext: '.js'
         }]
       },
@@ -178,6 +182,20 @@ module.exports = function (grunt) {
           dest: '.tmp/spec',
           ext: '.js'
         }]
+      }
+    },
+    recess: {
+      options: {
+	    compile: true
+          },
+          dist: {
+	    files: [{
+	        expand: true,
+	        cwd: '<%= yeoman.app %>/styles',
+	        src: '{,*/}*.less',
+	        dest: '<%= yeoman.app %>/styles/',
+	        ext: '.css'
+	    }]
       }
     },
     // not used since Uglify task does concat,
@@ -299,6 +317,7 @@ module.exports = function (grunt) {
     concurrent: {
       server: [
         'coffee:dist',
+        'recess',
         'copy:styles'
       ],
       test: [

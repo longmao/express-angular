@@ -12,8 +12,7 @@ angular.module('PEMDemoApp', ['ui.router'])
         // to active whenever 'contacts.list' or one of its decendents is active.
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
-        $scope.$on('$stateChangeStart', 
-        function(event, toState, toParams, fromState, fromParams){ console.log(toState) })
+
       }]);
 angular.module('PEMDemoApp')
   .config(function ($stateProvider, $urlRouterProvider) {
